@@ -8,7 +8,7 @@ const Login: React.FC = () => {
         password:''
     });
 
-    const {login, logout} = useAuthContext();
+    const {login} = useAuthContext();
     const navigate = useNavigate();
 
     const handleChange = (event:any) =>{
@@ -25,6 +25,9 @@ const Login: React.FC = () => {
         role: "ADMIN",
         firstName: "John",
         lastName: "Doe",
+    }
+
+    const tokens = {
         accessToken: "accessToken_test",
         refreshToken: "refreshToken_test"
     }
@@ -36,7 +39,7 @@ const Login: React.FC = () => {
             return;
         }
 
-        login(sampleUserData);
+        login(sampleUserData,tokens);
         navigate("/secure/post/update");
         console.log("Current URL:", window.location.href);
 

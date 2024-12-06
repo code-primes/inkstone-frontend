@@ -8,8 +8,6 @@ type SecureRouterProps = {
 }
 
 const SecureRouter: React.FC<SecureRouterProps> = ({children, requiredRole}) => {
-    console.log("required role type:",typeof(requiredRole))
-    console.log(requiredRole)
     const {isAuthenticated, hasRole} = useAuthContext();
     
     if (!isAuthenticated){
