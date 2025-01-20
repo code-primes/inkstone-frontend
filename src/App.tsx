@@ -5,16 +5,17 @@ import Login from './components/login/Login'
 import Post from './components/post/Post';
 
 function App() {
+
   return (
     <Router>
       <Routes>
         {/* public route */}
-        <Route path='/public/login' element={<Login/>}/>
+        <Route path='/public/login' element={<Login />} />
 
         {/* Secured route */}
         <Route path='/secure/post/update' element={
           <SecureRouter requiredRole='ADMIN'>
-            <Post/>
+            <Post />
           </SecureRouter>
         }
         />
